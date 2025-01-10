@@ -1,0 +1,692 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ html {
+    scroll-behavior: smooth;
+}
+
+ /* NAVBAR */
+ nav {
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+     align-items: center;
+     justify-content: space-between;
+     height: 70px;
+     background-color: black;
+     color: white;
+     position: fixed;
+     top: 0;
+     right: 0;
+     font-size: 20px;
+     padding: 20px 50px 20px 50px;
+     border-bottom: 1px solid orangered;
+     z-index: 1000;
+ }
+
+ nav input {
+     display: none;
+ }
+
+ /* For smaller screens like tablets */
+ @media (max-width: 768px) {
+     .hamburger {
+         display: block;
+     }
+
+     /* Initially hide the menu */
+     nav ul {
+         display: none;
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+     }
+
+     /* When checkbox is checked, display the menu */
+     #menu-toggle:checked+label+ul {
+         display: flex;
+         flex-direction: column;
+         right: 0;
+     }
+
+     /* Style the hamburger icon */
+     .hamburger {
+         display: block;
+         margin-left: 200px;
+         font-size: 30px;
+         color: white;
+         cursor: pointer;
+     }
+
+     /* Ensure the label and checkbox work properly */
+     #menu-toggle {
+         display: block;
+     }
+
+     /* Adjust other navigation styles */
+     nav {
+         justify-content: space-between;
+         padding: 20px;
+     }
+
+     nav ul li {
+         text-align: center;
+         margin: 10px 0;
+     }
+ }
+
+ h1 {
+     font-size: 35px;
+     font-weight: bold;
+     letter-spacing: 1px;
+
+ }
+
+ span {
+     color: orangered;
+ }
+
+ ul {
+     display: flex;
+     gap: 25px;
+ }
+
+ ul li {
+     text-decoration: none;
+     outline: none;
+     list-style: none;
+ }
+
+ li a {
+     color: white;
+     text-decoration: none;
+ }
+
+ li a:hover,
+ :focus {
+     color: orangered;
+     width: 100px;
+     border-radius: 10px;
+     text-decoration: none;
+     transition: 1s ease-in-out;
+
+ }
+
+ a button {
+     width: 150px;
+     border-radius: 30px;
+     border: none;
+     outline: none;
+     height: 30px;
+     background-color: orangered;
+     font-size: 20px;
+     color: white;
+ }
+
+ a button:hover {
+     background-color: black;
+     border: 1px solid orangered;
+ }
+
+ body {
+     background-color: black;
+ }
+
+ /* HOME */
+ #home-body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 5%;
+     margin-top: 90px;
+ }
+
+ .homediv {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     align-items: center;
+     color: white;
+     gap: 20%;
+ }
+
+ .homediv img {
+     margin-top: 30px;
+     height: 400px;
+     border-radius: 50%;
+     box-shadow: inset 0px 0px 50px orangered;
+     transition: 1s ease-in-out;
+     animation: animate 2.5s ease-in-out forwards infinite;
+     z-index: 1;
+     position: relative;
+ }
+
+ .homediv img:hover {
+     box-shadow: 0px 0px 70px white;
+ }
+
+ @keyframes animate {
+     0% {
+         transform: translateY(0px);
+     }
+
+     50% {
+         transform: translateX(-15px);
+     }
+
+     100% {
+         transform: translateY(0px);
+     }
+ }
+
+ .rightcontent h2 {
+     font-size: 40px;
+     color: orangered;
+     letter-spacing: 2px;
+     font-weight: bold;
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+
+ .rightcontent h3 {
+     font-size: 30px;
+
+ }
+
+ .title {
+     font-size: 30px;
+     padding-bottom: 10px;
+
+ }
+
+ .title span {
+     position: relative;
+
+ }
+
+ .title span {
+     position: relative;
+ }
+
+ .title span::after {
+     content: "";
+     position: absolute;
+     left: 0px;
+     right: 0px;
+     height: 100%;
+     border-left: 4px solid orangered;
+     background-color: black;
+     animation: text 3s infinite backwards steps(10);
+ }
+
+ @keyframes text {
+     0% {
+         left: 0;
+     }
+
+     50% {
+         left: 100%;
+     }
+
+     100% {
+         left: 0;
+     }
+ }
+
+ .icons {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
+
+ .icons i {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 50px;
+     height: 50px;
+     border: 1px solid orangered;
+     margin-top: 10px;
+     border-radius: 50px;
+     font-size: 25px;
+     margin-bottom: 20px;
+     transition: 1s ease-in-out;
+ }
+
+ .rightcontent button {
+     width: 150px;
+     height: 40px;
+     border-radius: 20px;
+     border: none;
+     outline: none;
+     font-size: 20px;
+     box-shadow: inset 0px 0px 50px orangered;
+
+ }
+
+ .icons i:hover {
+     background-color: orangered;
+     transform: translateY(-10px);
+
+ }
+
+ /* Hamburger icon styles (hidden by default on large screens) */
+ .hamburger {
+     display: none;
+     font-size: 30px;
+     cursor: pointer;
+ }
+
+ @media (max-width: 768px) {
+     .homediv {
+         flex-direction: column;
+         text-align: center;
+         gap: 0;
+     }
+
+     .homediv img {
+         height: 250px;
+         margin-bottom: 20px;
+     }
+
+     .icons {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+
+     .rightcontent h2 {
+         font-size: 30px;
+     }
+
+     .rightcontent p {
+         font-size: 16px;
+     }
+ }
+
+ /* ABOUT ME */
+
+ #aboutme {
+     padding: 100px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 150px;
+     color: orangered;
+ }
+
+ .block1 h1 {
+     font-size: 60px;
+     font-weight: bold;
+     text-decoration: underline;
+ }
+
+ .block1 p {
+     color: white;
+ }
+
+ .block1 h3 {
+     font-size: 25px;
+     color: white;
+     padding: 20px 0px 20px 0;
+ }
+
+ .block1 button {
+     margin-top: 20px;
+     background-color: orangered;
+     width: 150px;
+     height: 40px;
+     border-radius: 50px;
+     font-size: 20px;
+     border: none;
+     outline: none;
+ }
+
+ .block2 img {
+     margin-top: 30px;
+     height: 400px;
+     border-radius: 50%;
+     box-shadow: inset 0px 0px 50px orangered;
+     transition: 1s ease-in-out;
+     animation: ani 2.5s ease-in-out forwards infinite;
+ }
+
+ .block2 img:hover {
+     box-shadow: 0px 0px 70px white;
+ }
+
+ @keyframes ani {
+     0% {
+         transform: translateY(0px);
+     }
+
+     50% {
+         transform: translateX(-15px);
+     }
+
+     100% {
+         transform: translateY(0px);
+     }
+ }
+
+
+ @media (max-width: 768px) {
+     #aboutme {
+         flex-direction: column;
+         padding: 50px 20px;
+     }
+
+     .block1 h1 {
+         font-size: 40px;
+         text-align: center;
+     }
+
+     .block1 h3 {
+         font-size: 40px;
+         text-align: center;
+     }
+
+     .block1 p {
+         font-size: 16px;
+         text-align: center;
+         padding-bottom: 20px;
+     }
+
+     .block1 button {
+         margin-left: 140px;
+     }
+
+     .block2 img {
+         height: 300px;
+     }
+ }
+
+ /* SERVICES */
+
+ #Service-sect {
+     padding-top: 50px;
+     padding-left: 100px;
+     padding-right: 100px;
+ }
+
+ #Service-sect h1 {
+     text-align: center;
+     color: white;
+     font-size: 40px;
+     text-decoration: underline;
+     padding-bottom: 50px;
+ }
+
+ .Services {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 40px;
+ }
+
+ .Service2 h1 {
+     text-align: center;
+     font-size: 35px;
+     color: orangered;
+ }
+
+ .Service1,
+ .Service2,
+ .Service3 {
+     border-radius: 20px;
+     padding: 20px;
+     background-color: rgb(48, 48, 48);
+     transition: 2s ease;
+     color: white;
+
+ }
+
+ .Service3:hover {
+     background-color: orangered;
+     transform: translateY(-20px);
+ }
+
+ .Service2:hover {
+     background-color: orangered;
+     transform: translateY(-20px);
+ }
+
+ .Service1:hover {
+     background-color: orangered;
+     transform: translateY(-20px);
+ }
+
+ .Services i {
+     font-size: 30px;
+     color: white
+ }
+
+ .Services h4 {
+     font-size: 20px;
+     letter-spacing: 2px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     text-decoration: underline;
+
+ }
+
+ .Services p {
+     text-align: justify;
+     padding-bottom: 10px;
+ }
+
+ .Services a {
+     width: 100px;
+     text-decoration: underline;
+     font-size: 18px;
+ }
+
+ .Services a:hover {
+     cursor: pointer;
+
+ }
+
+ @media (max-width: 768px) {
+     .Services {
+         flex-direction: column;
+         gap: 30px;
+     }
+
+     .Service1,
+     .Service2,
+     .Service3 {
+         width: 100%;
+         padding: 20px;
+     }
+ }
+
+ /* MY WORK */
+
+ #mywork {
+     padding-left: 100px;
+     padding-right: 100px;
+     padding-top: 50px;
+     padding-bottom: 50px;
+ }
+
+ #mywork h1 {
+     color: orangered;
+     text-align: center;
+     text-decoration: underline;
+     padding: 50px;
+ }
+
+ .works {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+     gap: 30px;
+ }
+
+ .works h3 {
+     font-size: 25px;
+     color: lightgray;
+     padding: 20px;
+ }
+
+ .works p {
+     text-align: justify;
+     color: white;
+
+ }
+
+ .work1 {
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./IMAGES/pic3.jpeg);
+     ;
+     background-size: contain;
+     background-repeat: no-repeat;
+     width: 900px;
+     padding-top: 150px;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 20px;
+     transition: 1.5s ease-out;
+     box-shadow: inset 0 -300px 300px -300px orangered;
+
+
+ }
+
+ .work1:hover,
+ .work2:hover,
+ .work3:hover {
+     transform: translateY(-20px) scale(1.1);
+ }
+
+ .work2 {
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./IMAGES/pic2.jpeg);
+     background-size: contain;
+     background-repeat: no-repeat;
+     width: 900px;
+     padding-top: 150px;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 20px;
+     transition: 1.5s ease-out;
+     box-shadow: inset 0 -300px 300px -300px orangered;
+
+
+ }
+
+ .work3 {
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./IMAGES/pic1.jpeg);
+     ;
+     background-size: contain;
+     background-repeat: no-repeat;
+     width: 900px;
+     padding-top: 150px;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-bottom: 20px;
+     transition: 1.5s ease-out;
+     box-shadow: inset 0 -300px 300px -300px orangered;
+
+ }
+
+ @media (max-width: 768px) {
+     .works {
+         flex-direction: column;
+         gap: 20px;
+     }
+
+     .work1,
+     .work2,
+     .work3 {
+         width: 100%;
+         height: 300px;
+     }
+
+     .work1 h3,
+     .work2 h3,
+     .work3 h3 {
+         font-size: 20px;
+     }
+
+     .work1 p,
+     .work2 p,
+     .work3 p {
+         font-size: 14px;
+     }
+ }
+
+ /* CONTACT */
+
+ #Contact {
+     padding-left: 300px;
+     padding-right: 300px;
+     padding-top: 80px;
+ }
+
+ #Contact .h1 {
+     color: white;
+     font-size: 60px;
+     padding-bottom: 30px;
+     text-align: center;
+ }
+
+ #Contact input {
+     width: 100%;
+     height: 50px;
+     margin-bottom: 20px;
+     padding: 15px;
+     background-color: lightgray;
+     border: none;
+     outline: none;
+     border-radius: 0px;
+ }
+
+ #Contact textarea {
+     width: 100%;
+     height: 150px;
+     margin-bottom: 20px;
+     padding: 15px;
+     background-color: lightgray;
+     outline: none;
+     border-radius: 0px;
+ }
+
+ .contact-submit {
+     width: 130px;
+     height: 45px;
+     border-radius: 15px;
+     background-color: orangered;
+     color: white;
+     font-size: 20px;
+     border: none;
+     outline: none;
+     margin-bottom: 100px;
+ }
+
+ @media (max-width: 768px) {
+     #Contact {
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+
+     .contact-submit {
+         width: 100%;
+         height: 40px;
+     }
+ }
+
+
+ .footer {
+     font-size: 8px;
+     text-align: center;
+     background-color: orangered;
+     width: 100%;
+     height: 40px;
+     padding: 25px;
+     color: white;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+ }
